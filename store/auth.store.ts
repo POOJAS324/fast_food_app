@@ -28,6 +28,8 @@ const useAuthStore = create<AuthState>((set) => ({
 
         try {
             const user = await getCurrentUser();
+            /*const user: Models.User<Models.Preferences> | null =
+                await getCurrentUser();*/
 
             if(user) set({ isAuthenticated: true, user: user as User })
             else set( { isAuthenticated: false, user: null } );
